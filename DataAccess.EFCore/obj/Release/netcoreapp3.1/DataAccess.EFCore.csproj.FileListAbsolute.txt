@@ -1,0 +1,12 @@
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\bin\Release\netcoreapp3.1\DataAccess.EFCore.deps.json
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\bin\Release\netcoreapp3.1\DataAccess.EFCore.dll
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\bin\Release\netcoreapp3.1\DataAccess.EFCore.pdb
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\bin\Release\netcoreapp3.1\Domain.dll
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\bin\Release\netcoreapp3.1\Domain.pdb
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.csprojAssemblyReference.cache
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.AssemblyInfoInputs.cache
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.AssemblyInfo.cs
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.csproj.CoreCompileInputs.cache
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.csproj.CopyComplete
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.dll
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\DataAccess.EFCore\obj\Release\netcoreapp3.1\DataAccess.EFCore.pdb

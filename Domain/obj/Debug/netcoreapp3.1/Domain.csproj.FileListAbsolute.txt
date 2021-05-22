@@ -1,0 +1,17 @@
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+E:\git\C#\MyProjects\MangementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
