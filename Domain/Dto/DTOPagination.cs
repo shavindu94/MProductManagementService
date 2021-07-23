@@ -29,7 +29,7 @@ namespace Domain.Dto
         public object Data { get; set; }
 
         /// <summary>
-        ///Use Later  1
+        ///Use Later 2
         /// </summary>
         public DTOPagination()
         {

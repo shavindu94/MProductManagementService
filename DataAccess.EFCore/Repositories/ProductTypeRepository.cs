@@ -17,6 +17,7 @@ namespace DataAccess.EFCore.Repositories
 
         public List<ProductType> GetAllList()
         {
+            GetAllGrouped();
             return _context.ProductTypes.Include(a => a.Products).ToList();
         }
 
@@ -34,5 +35,28 @@ namespace DataAccess.EFCore.Repositories
              };
             return dtoPagination;
         }
+
+        public void GetAllGrouped()
+        {
+            var result = _context.Products.GroupBy(a => new { a.ProductTypeId, a.ProductType.Name }).
+                Select(a => new {ProductTypeId=a.Key.ProductTypeId, ProductTypeName= a.Key.Name, ProductCount= a.Count()}).OrderBy(a=>a.ProductCount).ToList();
+
+            var result2 = (from p in _context.Products
+                          join pt in _context.ProductTypes
+                          on p.ProductTypeId equals pt.ProductTypeId into x
+                          from x1 in x
+                          group x1 by new { x1.ProductTypeId, x1.Name } into g
+                          select new
+                          {
+                              ProductTypeId = g.Key.ProductTypeId,
+                              ProductTypeName = g.Key.Name,
+                              ProductCount = g.Count()
+                          }).OrderByDescending(a=>a.ProductCount).ToList();
+
+
+        }
+
+
+
     }
 }

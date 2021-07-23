@@ -14,4 +14,4 @@ E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\D
 E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
-E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+E:\git\C#\MyProjects\shavindu94\ManagementService\ManagementService\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.AssemblyReference.cache
