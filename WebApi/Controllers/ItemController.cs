@@ -46,7 +46,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                return Ok(_unitOfWork.Items.GetById(id));
+                return Ok(/*_unitOfWork.Items.GetById(id)*/);
             }
             catch (Exception)
             {
@@ -78,17 +78,17 @@ namespace WebApi.Controllers
         {
             try
             {
-                var item = _unitOfWork.Items.GetById(id);
-                if (item != null && item.ItemId != null)
-                {
-                    item.Name = itemUpdate.Name;
-                    item.ProductId = itemUpdate.ProductId;
-                    item.ImageUrl = itemUpdate.ImageUrl;
-                    item.IsActive = itemUpdate.IsActive;
-                    item.ModifiedDate = DateTime.Now;
-                }
-                // _unitOfWork.ProductTypes.Add(productType);
-                _unitOfWork.Complete();
+                //var item = _unitOfWork.Items.GetById(id);
+                //if (item != null && item.ItemId != null)
+                //{
+                //    item.Name = itemUpdate.Name;
+                //    item.ProductId = itemUpdate.ProductId;
+                //    item.ImageUrl = itemUpdate.ImageUrl;
+                //    item.IsActive = itemUpdate.IsActive;
+                //    item.ModifiedDate = DateTime.Now;
+                //}
+                //// _unitOfWork.ProductTypes.Add(productType);
+                //_unitOfWork.Complete();
                 return Ok();
             }
             catch (Exception)
@@ -104,9 +104,9 @@ namespace WebApi.Controllers
         {
             try
             {
-                var item = _unitOfWork.Items.GetById(id);
-                _unitOfWork.Items.Remove(item);
-                _unitOfWork.Complete();
+                //var item = _unitOfWork.Items.GetById(id);
+                //_unitOfWork.Items.Remove(item);
+                //_unitOfWork.Complete();
                 return Ok();
             }
             catch (Exception)

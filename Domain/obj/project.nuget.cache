@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "t7qhgZ/EJr2QEyjYhSnKl0SW1/CdjMKw4xZNqYxlG1YXsPeY82JXgoHXLxwKPKMRhF+McJ/VCApvGLhM0soTiw==",
+  "dgSpecHash": "QiMWoEDsB+aqQuNUFlBob1BIFL4Xf0eEnWA3jh/PE+EwQrgsWW/NxqHt173Yj5mhj8gNKaiBap+pqf3D2Wq8wA==",
   "success": true,
   "projectFilePath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shavindu\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.8\\microsoft.aspnetcore.http.features.5.0.8.nupkg.sha512",
     "C:\\Users\\Shavindu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\Shavindu\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
-    "C:\\Users\\Shavindu\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\Shavindu\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
   ],
   "logs": []
 }

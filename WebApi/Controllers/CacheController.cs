@@ -37,6 +37,12 @@ namespace WebApi.Controllers
             memoryCache.Set(data.key, data.value, cacheExpiryOptions);
             return Ok();
         }
+
+        public IActionResult RemoveCache(string key)
+        {
+            memoryCache.Remove(key);
+            return Ok();
+        }
         public class CacheRequest
         {
             public string key { get; set; }

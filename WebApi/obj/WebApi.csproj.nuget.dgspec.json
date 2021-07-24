@@ -4,29 +4,29 @@
     "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj": {
+    "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj",
-        "projectName": "DataAccess.EFCore",
-        "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj",
+        "projectUniqueName": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Shavindu\\.nuget\\packages\\",
-        "outputPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\obj\\",
+        "outputPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Shavindu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
               "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Domain\\Domain.csproj": {
                 "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Domain\\Domain.csproj"
@@ -41,16 +41,74 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj",
+        "projectName": "DataAccess.EFCore",
+        "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj",
+        "packagesPath": "C:\\Users\\Shavindu\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Shavindu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.8, )"
             }
           },
           "imports": [
@@ -86,15 +144,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -105,12 +163,79 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\IOC\\IOC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\IOC\\IOC.csproj",
+        "projectName": "IOC",
+        "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\IOC\\IOC.csproj",
+        "packagesPath": "C:\\Users\\Shavindu\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\IOC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Shavindu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj": {
+                "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj"
+              },
+              "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj": {
+                "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -146,18 +271,21 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj": {
-                "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\DataAccess.EFCore\\DataAccess.EFCore.csproj"
+              "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj": {
+                "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\Application\\Application.csproj"
+              },
+              "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\IOC\\IOC.csproj": {
+                "projectPath": "E:\\git\\C#\\MyProjects\\shavindu94\\ManagementService\\ManagementService\\IOC\\IOC.csproj"
               }
             }
           }
@@ -169,30 +297,26 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
             "Microsoft.AspNetCore.Mvc.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.13, )"
+              "version": "[5.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[5.0.8, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.1.4, )"
             }
           },
           "imports": [

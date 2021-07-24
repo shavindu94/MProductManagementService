@@ -1,5 +1,4 @@
-﻿using Domain.Dto;
-using Domain.Interfaces;
+﻿using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -67,5 +66,6 @@ namespace DataAccess.EFCore.Repositories
         {
             return await this._context.Set<T>().ToListAsync();
         }
+
     }
 }

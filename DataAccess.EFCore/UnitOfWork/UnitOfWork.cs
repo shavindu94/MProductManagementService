@@ -3,6 +3,7 @@ using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccess.EFCore.UnitOfWork
 {
@@ -22,6 +23,11 @@ namespace DataAccess.EFCore.UnitOfWork
         public int Complete()
         {
             return _context.SaveChanges();
+        }
+
+        public async Task<int> CompleteAsync()
+        {
+            return await _context.SaveChangesAsync();
         }
         public void Dispose()
         {

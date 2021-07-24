@@ -1,12 +1,12 @@
-﻿using Domain.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Domain.Dto
+namespace Application.DtoObjects
 {
-    public class DTOPagination
+    public class DtoPagination
     {
         public int PageSize { get; set; }
 
@@ -31,13 +31,9 @@ namespace Domain.Dto
         /// <summary>
         ///Use Later 2
         /// </summary>
-        public DTOPagination()
+        public DtoPagination()
         {
 
         }
-
-  
-
-
     }
 }

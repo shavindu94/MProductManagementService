@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    public class ProductService : IProductService
+    public class ProductService 
     {
         private readonly IUnitOfWork _unitOfWork;
 

@@ -12,5 +12,15 @@ namespace Application.Interfaces
         Task<List<DtoProductType>> GetProductsAsync();
 
         List<DtoProductType> GetProducts();
+
+        void CreateProductType(DtoProductType dtoProductType);
+
+        Task<DtoPagination> GetProductTypesAsync(DtoPagination paginationIn);
+
+        Task<DtoProductType> GetByIdAsync(Guid id);
+
+        Task UpdateProductTypeAsync(Guid id, DtoProductType dtoProductType);
+
+        Task Delete(Guid id);
     }
 }

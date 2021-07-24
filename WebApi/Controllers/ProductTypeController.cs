@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using System.Web.Http;
-using Domain.Dto;
+using Application.DtoObjects;
+using Application.Services;
+
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Cors;
@@ -24,37 +25,35 @@ namespace WebApi.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMemoryCache _memoryCache;
-        public ProductTypeController(IUnitOfWork unitOfWork, IMemoryCache memoryCache)
+        private readonly ProductTypeService _productTypeService;
+        public ProductTypeController(IUnitOfWork unitOfWork, IMemoryCache memoryCache, ProductTypeService productTypeService)
         {
             _memoryCache = memoryCache;
             _unitOfWork = unitOfWork;
+            _productTypeService = productTypeService;
         }
 
 
         // GET: api/<ItemsController>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             try
             {
-
-                List<ProductType> productTypeList = _unitOfWork.ProductTypes.GetAllList().ToList();
-                return Ok(productTypeList);
-
-                //Cache 
-                //var cacheKey = "productTypeList";
-                //if (!_memoryCache.TryGetValue(cacheKey, out List<ProductType> productTypeList))
-                //{
-                //    productTypeList = _unitOfWork.ProductTypes.GetAll().ToList();
-                //    var cacheExpiryOptions = new MemoryCacheEntryOptions
-                //    {
-                //        AbsoluteExpiration = DateTime.Now.AddMinutes(5),
-                //        Priority = CacheItemPriority.High,
-                //        SlidingExpiration = TimeSpan.FromMinutes(2)
-                //    };
-                //    _memoryCache.Set(cacheKey, productTypeList, cacheExpiryOptions);
-                //}
-                //return Ok(productTypeList);
+                List<DtoProductType> dtoProductTypeList = new List<DtoProductType>();
+                var cacheKey = "productTypeList";
+                if (!_memoryCache.TryGetValue(cacheKey, out dtoProductTypeList))
+                {
+                    dtoProductTypeList = await _productTypeService.GetProductsAsync();
+                    var cacheExpiryOptions = new MemoryCacheEntryOptions
+                    {
+                        AbsoluteExpiration = DateTime.Now.AddMinutes(5),
+                        Priority = CacheItemPriority.High,
+                        SlidingExpiration = TimeSpan.FromMinutes(2)
+                    };
+                    _memoryCache.Set(cacheKey, dtoProductTypeList, cacheExpiryOptions);
+                }
+                return Ok(dtoProductTypeList);
             }
             catch (Exception)
             {
@@ -67,16 +66,12 @@ namespace WebApi.Controllers
         
         [HttpGet]
         [Route("GetPaginationList")]
-        public IActionResult GetPaginationList()
+        public async Task<IActionResult> GetPaginationList()
          {
             try
             {
-
-                DTOPagination pageObj = JsonConvert.DeserializeObject<DTOPagination>(HttpContext.Request.Query["Pagination"].ToString());
-
-
-                return Ok(_unitOfWork.ProductTypes.GetAllList(pageObj));
-
+                DtoPagination pageObj = JsonConvert.DeserializeObject<DtoPagination>(HttpContext.Request.Query["Pagination"].ToString());
+                return Ok(await _productTypeService.GetProductTypesAsync(pageObj));
             }
             catch (Exception)
             {
@@ -86,13 +81,13 @@ namespace WebApi.Controllers
 
         }
 
-        // GET api/<ItemsController>/5
+
         [HttpGet("{id}")]
-        public IActionResult Get(Guid id)
+        public async Task<IActionResult> Get(Guid id)
         {
             try
             {
-                return Ok(_unitOfWork.ProductTypes.GetById(id));
+                return Ok( await _productTypeService.GetByIdAsync(id));
             }
             catch (Exception)
             {
@@ -103,12 +98,12 @@ namespace WebApi.Controllers
 
         // POST api/<ItemsController>
         [HttpPost]
-        public IActionResult Post([FromBody] ProductType productType)
+        public IActionResult Post([FromBody] DtoProductType dtoProductType)
         {
             try
             {
-                _unitOfWork.ProductTypes.Add(productType);
-                _unitOfWork.Complete();
+                _productTypeService.CreateProductType(dtoProductType);
+                InvalidateProductTypeCache();
                 return Ok();
             }
             catch (Exception)
@@ -120,20 +115,12 @@ namespace WebApi.Controllers
 
         // PUT api/<ItemsController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, [FromBody] ProductType productTypeUpdated)
+        public async Task<IActionResult> Put(Guid id, [FromBody] DtoProductType DtoProductTypeUpdated)
         {
             try
             {
-               var productType = _unitOfWork.ProductTypes.GetById(id);
-                if(productType != null && productType.ProductTypeId != null)
-                {
-                    productType.Name = productTypeUpdated.Name;
-                    productType.ImageUrl = productTypeUpdated.ImageUrl;
-                    productType.IsActive = productTypeUpdated.IsActive;
-                    productType.ModifiedDate = DateTime.Now;
-                }
-               // _unitOfWork.ProductTypes.Add(productType);
-                _unitOfWork.Complete();
+                await  _productTypeService.UpdateProductTypeAsync(id, DtoProductTypeUpdated);
+                InvalidateProductTypeCache();
                 return Ok();
             }
             catch (Exception)
@@ -146,19 +133,27 @@ namespace WebApi.Controllers
 
         // DELETE api/<ItemsController>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             try
             {
-                var ProductType = _unitOfWork.ProductTypes.GetById(id);
-                _unitOfWork.ProductTypes.Remove(ProductType);
-                _unitOfWork.Complete();
-                return Ok();
+               await  _productTypeService.Delete(id);
+               InvalidateProductTypeCache();
+               return Ok();
             }
             catch (Exception)
             {
 
                 throw;
+            }
+        }
+
+        private void InvalidateProductTypeCache()
+        {
+            var cacheKey = "productTypeList";
+            if (_memoryCache.TryGetValue(cacheKey, out List<DtoProductType> dtoProductTypeList))
+            {
+                _memoryCache.Remove(cacheKey);
             }
         }
 

@@ -48,7 +48,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                return Ok(_unitOfWork.Products.GetById(id));
+                return Ok(/*_unitOfWork.Products.GetById(id)*/);
             }
             catch (Exception)
             {
@@ -80,17 +80,17 @@ namespace WebApi.Controllers
         {
             try
             {
-                var product = _unitOfWork.Products.GetById(id);
-                if (product != null && product.ProductId != null)
-                {
-                    product.Name = productUpdated.Name;
-                    product.ProductTypeId = productUpdated.ProductTypeId;
-                    product.ImageUrl = productUpdated.ImageUrl;
-                    product.IsActive = productUpdated.IsActive;
-                    product.ModifiedDate = DateTime.Now;
-                }
-                // _unitOfWork.ProductTypes.Add(productType);
-                _unitOfWork.Complete();
+                //var product = _unitOfWork.Products.GetById(id);
+                //if (product != null && product.ProductId != null)
+                //{
+                //    product.Name = productUpdated.Name;
+                //    product.ProductTypeId = productUpdated.ProductTypeId;
+                //    product.ImageUrl = productUpdated.ImageUrl;
+                //    product.IsActive = productUpdated.IsActive;
+                //    product.ModifiedDate = DateTime.Now;
+                //}
+                //// _unitOfWork.ProductTypes.Add(productType);
+                //_unitOfWork.Complete();
                 return Ok();
             }
             catch (Exception)
@@ -106,9 +106,9 @@ namespace WebApi.Controllers
         {
             try
             {
-                var product = _unitOfWork.Products.GetById(id);
-                _unitOfWork.Products.Remove(product);
-                _unitOfWork.Complete();
+                //var product = _unitOfWork.Products.GetById(id);
+                //_unitOfWork.Products.Remove(product);
+                //_unitOfWork.Complete();
                 return Ok();
             }
             catch (Exception)

@@ -1,5 +1,4 @@
-﻿using Domain.Dto;
-using Domain.Entities;
+﻿
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,31 +22,31 @@ namespace WebApi.Controllers
         }
 
 
-        public async Task<string> CreateImage([FromForm] DTOImage img)
-        {
-            try
-            {
-                IFormFile image = img.Image;
-                string uploads = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
+        //public async Task<string> CreateImage([FromForm] DTOImage img)
+        //{
+        //    try
+        //    {
+        //        IFormFile image = img.Image;
+        //        string uploads = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
 
-                    if (image.Length > 0)
-                    {
-                        string filePath = Path.Combine(uploads, image.FileName);
-                        using (Stream fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await image.CopyToAsync(fileStream);
-                        }
-                    }
+        //            if (image.Length > 0)
+        //            {
+        //                string filePath = Path.Combine(uploads, image.FileName);
+        //                using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+        //                {
+        //                    await image.CopyToAsync(fileStream);
+        //                }
+        //            }
 
 
-                return "";
+        //        return "";
 
-            }
-            catch (Exception)
-            {
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
     }
 }
