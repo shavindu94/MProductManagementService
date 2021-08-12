@@ -141,7 +141,7 @@ namespace Application.Services
             }
             else
             {
-                throw new NotFoundException(dtoProductType.Name, id.ToString());
+                throw new NotFoundException("Product Type Not found Id:", id.ToString());
             }
         }
 

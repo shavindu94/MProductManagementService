@@ -95,14 +95,13 @@ namespace WebApi.Controllers
             }
             catch (NotFoundException ex)
             {
-                _logger.LogInformation("Couldnt find the Product Type Id  : "+id + "Data", ex);
-                return StatusCode(500);
+                _logger.LogInformation("Product Type Get , Couldnt find the Product Type Id  : "+id + "Data", ex);
+                return StatusCode(401);
             }
             catch (Exception ex)
             {
-
                 _logger.LogError("Get by Id failed Id :" + id, ex);
-                return StatusCode(401);
+                return StatusCode(500);
             }
         }
 
@@ -116,10 +115,10 @@ namespace WebApi.Controllers
                 InvalidateProductTypeCache();
                 return Ok();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError("Product Type save error", ex);
+                return StatusCode(401);
             }
         }
 
@@ -133,10 +132,15 @@ namespace WebApi.Controllers
                 InvalidateProductTypeCache();
                 return Ok();
             }
-            catch (Exception)
+            catch (NotFoundException ex)
             {
-
-                throw;
+                _logger.LogInformation("Product Type Update , Couldnt find the Product Type Id  : " + id + "Data", ex);
+                return StatusCode(401);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Product Type update error", ex);
+                return StatusCode(401);
             }
           
         }
@@ -151,10 +155,15 @@ namespace WebApi.Controllers
                InvalidateProductTypeCache();
                return Ok();
             }
-            catch (Exception)
+            catch (NotFoundException ex)
             {
-
-                throw;
+                _logger.LogInformation("Product Type Delete , Couldnt find the Product Type Id  : " + id + "Data", ex);
+                return StatusCode(401);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Product Type delete error", ex);
+                return StatusCode(401);
             }
         }
 

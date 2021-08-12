@@ -14,5 +14,8 @@ namespace Domain.Entities
         [Required]
         public int CreatedUserId { get; set; }
         public int  ModifiedUserId { get; set; }
+
+        [Timestamp]
+        public byte[] Timestamp { get; set; }
     }
 }
