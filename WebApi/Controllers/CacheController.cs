@@ -38,7 +38,9 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-        public IActionResult RemoveCache(string key)
+
+        [HttpDelete]
+        public  IActionResult RemoveCache(string key)
         {
             memoryCache.Remove(key);
             return Ok();

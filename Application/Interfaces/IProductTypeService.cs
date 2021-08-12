@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    interface IProductTypeService
+    public interface IProductTypeService
     {
         Task<List<DtoProductType>> GetProductsAsync();
 

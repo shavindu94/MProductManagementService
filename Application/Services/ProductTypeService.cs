@@ -15,10 +15,12 @@ namespace Application.Services
     {
 
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IContentService _contentService;
 
-        public ProductTypeService(IUnitOfWork unitOfWork)
+        public ProductTypeService(IUnitOfWork unitOfWork , IContentService contentService)
         {
             _unitOfWork = unitOfWork;
+            _contentService = contentService;
         }
 
         public List<DtoProductType> GetProducts()
@@ -40,7 +42,7 @@ namespace Application.Services
 
         public void CreateProductType(DtoProductType dtoProductType)
         {
-            _unitOfWork.ProductTypes.Add(FillProductType(dtoProductType));
+            _unitOfWork.ProductTypes.Add(FillProductType(dtoProductType, new ProductType()));
             _unitOfWork.Complete();
         }
 
@@ -52,7 +54,7 @@ namespace Application.Services
             {
                 PageNumber = paginationIn.PageNumber,
                 PageSize = paginationIn.PageSize,
-                TotalNumber = _unitOfWork.Products.GetCount(),
+                TotalNumber = _unitOfWork.ProductTypes.GetCount(),
                 Data = (list != null && list.Any() ? FillDtoProductTypes(list.ToList()) : null)
             };
             return pagination;
@@ -83,22 +85,20 @@ namespace Application.Services
 
         }
 
-        private ProductType FillProductType(DtoProductType dtoProductType)
+        private ProductType FillProductType(DtoProductType dtoProductType , ProductType productType)
         {
-            ProductType productType = new ProductType()
-            {
-                Name = dtoProductType.Name,
-                IsActive = dtoProductType.IsActive,
-                ImageUrl = dtoProductType.ImageUrl,
-            };
 
-            if (dtoProductType.ProductTypeId == Guid.Empty)
+            productType.Name = dtoProductType.Name;
+            productType.IsActive = dtoProductType.IsActive;
+            productType.ImageUrl = dtoProductType.ImageUrl;
+            
+
+            if (productType.ProductTypeId == Guid.Empty)
             {
                 productType.CreatedDate = DateTime.Now;
             }
             else
             {
-                productType.ProductTypeId = dtoProductType.ProductTypeId;
                 productType.ModifiedDate = DateTime.Now;
             }
             return productType;
@@ -122,13 +122,22 @@ namespace Application.Services
 
         public async Task UpdateProductTypeAsync(Guid id , DtoProductType dtoProductType)
         {
-            ProductType product = await _unitOfWork.ProductTypes.GetByIdAsync(id);
+            ProductType productType = await _unitOfWork.ProductTypes.GetByIdAsync(id);
 
-            if (product != null && product.ProductTypeId != Guid.Empty)
+            if (productType != null && productType.ProductTypeId != Guid.Empty)
             {
-                var productType = FillProductType(dtoProductType);
-                _unitOfWork.ProductTypes.Update(productType);
-                await _unitOfWork.CompleteAsync();
+                bool imageChanged = false;
+
+                if (!string.IsNullOrWhiteSpace(productType.ImageUrl) &&  productType.ImageUrl != dtoProductType.ImageUrl)
+                    imageChanged = true;
+
+                      var productTypeUpdated = FillProductType(dtoProductType,productType);
+                     _unitOfWork.ProductTypes.Update(productTypeUpdated);
+                      await _unitOfWork.CompleteAsync();
+                if (imageChanged)
+                {
+                    await _contentService.RemoveContent(productType.ImageUrl);
+                }
             }
             else
             {
@@ -144,6 +153,7 @@ namespace Application.Services
             {
                 _unitOfWork.ProductTypes.Remove(productType);
                 _unitOfWork.Complete();
+                await  _contentService.RemoveContent(productType.ImageUrl);
             }
             else
             {
