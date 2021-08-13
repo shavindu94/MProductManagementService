@@ -13,6 +13,8 @@ namespace Application.DtoObjects
         public bool IsActive { get; set; }
         public string ImageUrl { get; set; }
         public string ItemDetail { get; set; }
+
+        public string ProductName { get; set; }
         public Guid ProductId { get; set; }
 
     }

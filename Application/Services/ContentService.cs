@@ -53,7 +53,7 @@ namespace Application.Services
 
                 var response = await RemoveObject(fileName);
 
-                if (response.Success) ////// need to change this
+                if (!response.Success) ////// need to change this
                 {
                     return "Successfully Removed";
                 }

@@ -21,6 +21,18 @@ namespace IOC.DependencyMangement
 
             services.AddTransient<IProductTypeRepository, ProductTypeRepository>();
 
+            services.AddTransient<IProductService, ProductService>();
+
+            services.AddTransient<IProductRepository, ProductRepository>();
+
+            services.AddTransient<IItemService, ItemService>();
+
+            services.AddTransient<IItemRepository,ItemRepository>();
+
+            services.AddTransient<IProductService, ProductService>();
+
+            services.AddTransient<IProductRepository, ProductRepository>();
+
             services.AddTransient<IContentService, ContentService>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();

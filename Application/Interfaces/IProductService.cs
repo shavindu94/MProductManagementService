@@ -7,8 +7,20 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    interface IProductService
+    public interface IProductService
     {
-        List<DtoProductType> GetProducts();
+        Task<List<DtoProduct>> GetProductsAsync();
+
+        List<DtoProduct> GetProducts();
+
+        void CreateProduct(DtoProduct dtoProduct);
+
+        Task<DtoPagination> GetProductsAsync(DtoPagination paginationIn);
+
+        Task<DtoProduct> GetByIdAsync(Guid id);
+
+        Task UpdateProductAsync(Guid id, DtoProduct dtoProduct);
+
+        Task Delete(Guid id);
     }
 }
