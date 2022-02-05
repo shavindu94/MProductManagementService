@@ -44,7 +44,7 @@ namespace WebApi
                 options.AddPolicy("AnotherPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:3000")   ///https:61159 local debug   ///http://localhost:61161 IIS enable
+                        builder.WithOrigins("http://localhost:61161")   ///https:61159 local debug   ///http://localhost:61161 IIS enable
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                     });
