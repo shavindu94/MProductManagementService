@@ -16,10 +16,10 @@ namespace Application.Services
 {
     public class ContentService : IContentService
     {
-        private static string accessKey = "AKIAY6LIYBQXYEQF5KQS";
-        private static string accessSecret = "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";
-        private static string bucket = "imagenews316";
-        private static string awsBucketUrl = "https://imagenews316.s3.us-east-2.amazonaws.com/";
+        private static string accessKey = "";
+        private static string accessSecret = "";
+        private static string bucket = "";
+        private static string awsBucketUrl = "";
 
         public async Task<string> SaveContent(FileModel fileModel)
         {
